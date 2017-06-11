@@ -10,7 +10,7 @@ module StateAndBehaviour
     end
 
     def initialize(car_attributes)
-      raise ArgumentError unless car_attributes.is_a?(Hash)
+      raise ArgumentError, 'Expects hash' unless car_attributes.is_a?(Hash)
       @year = car_attributes.fetch(:year, 2015)
       @color = car_attributes.fetch(:color, 'purple')
       @model = car_attributes.fetch(:model, 'skyline')
