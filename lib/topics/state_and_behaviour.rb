@@ -20,7 +20,7 @@ module StateAndBehaviour
     end
 
     def speed_up(speed)
-      @current_speed = speed
+      @current_speed += speed
     end
 
     def push_break(speed)
