@@ -11,20 +11,18 @@ module StateAndBehaviour
 
     def initialize(car_attributes)
       raise ArgumentError, 'Expects hash' unless car_attributes.is_a?(Hash)
-      @year = car_attributes.fetch(:year, 2015)
-      @color = car_attributes.fetch(:color, 'purple')
-      @model = car_attributes.fetch(:model, 'skyline')
-      @current_speed = 0
+      self.year = car_attributes.fetch(:year, 2015)
+      self.color = car_attributes.fetch(:color, 'purple')
+      self.model = car_attributes.fetch(:model, 'skyline')
+      self.current_speed = 0
     end
 
     def speed_up(speed)
-      raise ArgumentError, 'No argument passed' if speed.nil?
-      @current_speed = speed
+      self.current_speed = speed
     end
 
     def push_break(speed)
-      raise ArgumentError, 'No argument passed' if speed.nil?
-      @current_speed -= speed if speed <= @current_speed
+      self.current_speed -= speed if speed <= current_speed
     end
   end
 end
